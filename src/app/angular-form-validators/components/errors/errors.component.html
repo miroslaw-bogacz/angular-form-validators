@@ -1,0 +1,5 @@
+<div *ngIf="isShow">
+  <div class="alert alert-error" *ngFor="let error of errors(control)">
+    {{ error }}
+  </div>
+</div>
