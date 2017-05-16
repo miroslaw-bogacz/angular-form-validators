@@ -3,7 +3,7 @@
     "node_modules/codelyzer"
   ],
   "rules": {
-    "callable-types": true,
+    "callable-types": false,
     "class-name": true,
     "comment-format": [
       true,
