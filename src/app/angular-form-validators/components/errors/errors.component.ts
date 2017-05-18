@@ -31,15 +31,15 @@ export class ErrorsComponent {
 
   constructor() { }
 
-  public errors(control): Array<string> {
-    return Object.keys(control.errors)
+  public errors(control: AbstractControl): Array<string> {
+    return Object.keys(control.errors || {})
       .reduce((acc: Array<string>, value: string) => acc.concat(control.getError(value)), []);
   }
 
   public get isShow(): boolean {
-    const status: boolean = this.control[this.showByStatus];
+    const status: boolean = this.control ? this.control[this.showByStatus] : false;
 
-    return this.show  && this.showByStatus === undefined
+    return this.show && status === undefined
         || this.show === undefined && status
         || this.show && status;
   }

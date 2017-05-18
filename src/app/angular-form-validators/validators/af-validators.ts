@@ -19,20 +19,25 @@ export class AFValidators {
    * @type {IMessages}
    */
   static messages: IMessages = <IMessages>{
-    required: `${name} is required.`,
-    requiredTrue: `${name} is required.`,
-    email: `address email in ${name} is incorrect`,
-    minLength: `number in ${name} is to low`,
-    maxLength: `number in ${name} is to high`,
+    required: '${name} is required.',
+    requiredTrue: '${name} is required.',
+    email: 'address email in ${name} is incorrect',
+    minLength: 'number in ${name} is to low',
+    maxLength: 'number in ${name} is to high',
+  };
+
+  static patterns = {
+    // tslint:disable-next-line max-line-length
+    email: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
   };
 
   /**
    * @param name {string}
    * @return {IRequiredFn}
    */
-  static requred(name: string): IRequiredFn {
+  static required(name: string): IRequiredFn {
     return (control: AbstractControl) => !Validators.required(control) ? null : <IRequiredResult>{
-      required: AFValidators.messages.required,
+      required: AFValidators.messages.required.replace('${name}', name),
     };
   }
 
@@ -40,9 +45,9 @@ export class AFValidators {
    * @param name {string}
    * @return {IRequiredTrueFn}
    */
-  static requredTrue(name: string): IRequiredTrueFn {
+  static requiredTrue(name: string): IRequiredTrueFn {
     return (control: AbstractControl) => !Validators.requiredTrue(control) ? null : <IRequiredTrueResult>{
-      requiredTrue: AFValidators.messages.requiredTrue,
+      requiredTrue: AFValidators.messages.requiredTrue.replace('${name}', name),
     };
   }
 
@@ -51,9 +56,10 @@ export class AFValidators {
    * @return {IEmailFn}
    */
   static email(name: string): IEmailFn {
-    return (control: AbstractControl) => !Validators.email(control) ? null : <IEmailResult>{
-      email: AFValidators.messages.email,
-    };
+    return (control: AbstractControl) =>
+      !Validators.pattern(AFValidators.patterns.email)(control) ? null : <IEmailResult>{
+        email: AFValidators.messages.email.replace('${name}', name),
+      };
   }
 
   /**
@@ -63,7 +69,7 @@ export class AFValidators {
    */
   static minLength(name: string, min: number): IMinLengthFn {
     return (control: AbstractControl) => !Validators.minLength(min)(control) ? null : <IMinLengthResult>{
-      minLength: AFValidators.messages.minLength,
+      minLength: AFValidators.messages.minLength.replace('${name}', name),
     };
   }
 
@@ -74,7 +80,7 @@ export class AFValidators {
    */
   static maxLength(name: string, max: number): IMaxLengthFn {
     return (control: AbstractControl) => !Validators.maxLength(max)(control) ? null : <IMaxLengthResult>{
-      maxLength: AFValidators.messages.maxLength,
+      maxLength: AFValidators.messages.maxLength.replace('${name}', name),
     };
   }
 }
