@@ -5,7 +5,7 @@
 
 or
 
-`yarn add angular-form/validators`
+`yarn add angular-form-validators`
 
 ### Use component to show validators message
 
