@@ -1,18 +1,18 @@
 # AngularFormValidators
 
 ## Usage:
-`npm install --save @mirexjs/angular-form-validators`
+`npm install --save angular-form-validators`
 
 or
 
-`yarn add @mirexjs/angular-form/validators`
+`yarn add angular-form/validators`
 
 ### Use component to show validators message
 
 #### Import AngularFormValidatorsModule 
 to your module
 ```
-import { AngularFormValidatorsModule } from '@mirexjs/angular-form-validators-module';
+import { AngularFormValidatorsModule } from 'angular-form-validators-module';
 
 @NgModule({
   imports: [ AngularFormValidatorsModule ],
@@ -27,7 +27,7 @@ to set validator for your FormControl
 
 in ts file
 ```
-import { AFValidators } form '@mirexjs/angular-form-validators'
+import { AFValidators } form 'angular-form-validators'
 
 ...
 
