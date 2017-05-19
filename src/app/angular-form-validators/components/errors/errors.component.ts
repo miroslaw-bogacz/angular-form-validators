@@ -23,11 +23,11 @@ export class ErrorsComponent {
   @Input() public show;
 
   /**
-   * You can use values: dirty, pristin, touched, untouched
+   * You can use values: dirty, pristine, touched, untouched
    *
    * @type {string}
    */
-  @Input() public showByStatus: string;
+  @Input() public showByStatus: 'dirty' | 'pristine' | 'touched' | 'untouched';
 
   constructor() { }
 
@@ -37,11 +37,12 @@ export class ErrorsComponent {
   }
 
   public get isShow(): boolean {
-    const status: boolean = this.control ? this.control[this.showByStatus] : false;
+    const status: boolean = this.control && this.control[this.showByStatus];
 
     return this.show && status === undefined
         || this.show === undefined && status
-        || this.show && status;
+        || this.show && status
+        || this.show === undefined && status === undefined;
   }
 
 }

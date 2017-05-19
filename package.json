@@ -1,8 +1,8 @@
 {
-  "name": "angular-form-validators",
+  "name": "@mirexjs/angular-form-validators",
   "version": "0.0.0",
   "license": "MIT",
-  "description": "",
+  "description": "Reactive Forms Validators, Component to show validators message",
   "main": "./index.ts",
   "typings": "./index.ts",
   "author": "Mirosław Bogacz <mirexjs@hotmail.com> (https://github.com/mirexjs)",

@@ -3,7 +3,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ErrorsComponent } from './errors.component';
 import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { debug } from 'util';
 import { AbstractControl, FormControl } from '@angular/forms';
 import { AFValidators } from '../../validators/af-validators';
 
@@ -50,7 +49,7 @@ describe('ErrorsComponent', () => {
     });
 
     it('shouldn\'t show errors', () => {
-      expect(debugElement.queryAll(By.css('.afv-alert')).length).toBe(0);
+      expect(debugElement.queryAll(By.css('.afv-alert__item')).length).toBe(0);
     });
   });
 
@@ -74,7 +73,6 @@ describe('ErrorsComponent', () => {
       });
 
       it('shouldn\'t show errors', () => {
-        console.log(testHostComponent.show);
         expect(debugElement.queryAll(By.css('.afv-alert')).length).toBe(0);
       });
     });

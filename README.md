@@ -1,4 +1,55 @@
-# AngularValidators
+# AngularFormValidators
+
+## Usage:
+`npm install --save @mirexjs/angular-form-validators`
+
+or
+
+`yarn add @mirexjs/angular-form/validators`
+
+### Use component to show validators message
+
+#### Import AngularFormValidatorsModule 
+to your module
+```
+import { AngularFormValidatorsModule } from '@mirexjs/angular-form-validators-module';
+
+@NgModule({
+  imports: [ AngularFormValidatorsModule ],
+  declarations: [ AppComponent ],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule {}
+```
+
+#### Use AFValidators
+to set validator for your FormControl
+
+in ts file
+```
+import { AFValidators } form '@mirexjs/angular-form-validators'
+
+...
+
+this.email = new FormControl('', AFValidators.email('email'));
+```
+
+in template
+
+```
+<input type="text" [formControl]="control">
+<afv-errors [control]="email" showByStatus="touched"></afv-errors>
+```
+
+---
+
+## Properties
+
+`control`: `FormControl`
+
+`show?`: `boolean`
+
+`showByStatus?`: `touched | untouched | dirty | pristine`
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
