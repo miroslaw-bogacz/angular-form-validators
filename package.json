@@ -5,10 +5,10 @@
   "description": "",
   "main": "./index.ts",
   "typings": "./index.ts",
-  "author": "Mirosław Bogacz <miroslaw.bogacz@hotmail.com> (https://github.com/miroslaw-bogacz)",
+  "author": "Mirosław Bogacz <mirexjs@hotmail.com> (https://github.com/mirexjs)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/miroslaw-bogacz/angular-form-validators.git"
+    "url": "git+https://github.com/mirexjs/angular-form-validators.git"
   },
   "scripts": {
     "ng": "ng",
