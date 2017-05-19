@@ -2,6 +2,14 @@
   "name": "angular-form-validators",
   "version": "0.0.0",
   "license": "MIT",
+  "description": "",
+  "main": "./index.ts",
+  "typings": "./index.ts",
+  "author": "Mirosław Bogacz <miroslaw.bogacz@hotmail.com> (https://github.com/miroslaw-bogacz)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miroslaw-bogacz/angular-form-validators.git"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,7 +18,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",

@@ -9,4 +9,4 @@ import { ErrorsComponent } from './components/errors/errors.component';
   declarations: [ ErrorsComponent ],
   exports: [ ErrorsComponent ],
 })
-export class AngularValidatorsModule { }
+export class AngularFormValidatorsModule { }
