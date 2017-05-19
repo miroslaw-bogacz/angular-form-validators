@@ -1,6 +1,6 @@
 {
   "name": "angular-form-validators",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "license": "MIT",
   "description": "Reactive Forms Validators, Component to show validators message",
   "main": "./index.ts",
