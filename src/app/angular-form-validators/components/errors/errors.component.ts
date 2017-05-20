@@ -29,6 +29,16 @@ export class ErrorsComponent {
    */
   @Input() public showByStatus: 'dirty' | 'pristine' | 'touched' | 'untouched';
 
+  /**
+   * @type {string|string[]}
+   */
+  @Input('containerClass') public containerClass: string | string[];
+
+  /**
+   * @type {string|string[]}
+   */
+  @Input('itemClass') public itemClass: string | string[];
+
   constructor() { }
 
   public errors(control: AbstractControl): Array<string> {
@@ -43,6 +53,14 @@ export class ErrorsComponent {
         || this.show === undefined && status
         || this.show && status
         || this.show === undefined && status === undefined;
+  }
+
+  public getClasses(type: 'container' | 'item'): string {
+    const classes: string | string[] = type === 'container'
+      ? this.containerClass || 'afv-alert'
+      : this.itemClass || ['afv-alert__item', 'afv-alert__item--error'];
+
+    return Array.isArray(classes) ? classes.join(' ') : classes;
   }
 
 }

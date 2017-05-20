@@ -1,5 +1,5 @@
-<div *ngIf="isShow" class="afv-alert">
-  <div class="afv-alert__item afv-alert__item--error" *ngFor="let error of errors(control)">
+<div *ngIf="isShow" [class]="getClasses('container')">
+  <div *ngFor="let error of errors(control)" [class]="getClasses('item')">
     {{ error }}
   </div>
 </div>
