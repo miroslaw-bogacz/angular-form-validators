@@ -1,4 +1,4 @@
-# AngularFormValidators
+# AngularFormValidators (0.0.5)
 
 ## Usage:
 `npm install --save angular-form-validators`
