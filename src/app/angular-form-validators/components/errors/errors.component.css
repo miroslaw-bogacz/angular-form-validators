@@ -1,0 +1,11 @@
+.avf-alert__item {
+  margin-top: 5px;
+  padding: 5px 10px;
+  border: 1px solid transparent;
+}
+
+.avf-alert__item--error {
+  color: #a94442;
+  border-color: #ebccd1;
+  background: #f2dede;
+}
