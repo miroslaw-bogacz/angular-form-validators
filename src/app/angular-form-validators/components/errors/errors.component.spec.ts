@@ -7,11 +7,18 @@ import { AbstractControl, FormControl } from '@angular/forms';
 import { AFValidators } from '../../validators/af-validators';
 
 @Component({
-  template: `<afv-errors [control]="control" [show]="show"></afv-errors>`
+  template: `<afv-errors 
+                [control]="control" 
+                [show]="show" 
+                [containerClass]="containerClass"
+                [itemClass]="itemClass"
+             ></afv-errors>`
 })
 class TestHostComponent {
   control: AbstractControl = new FormControl();
   show: boolean;
+  containerClass: string | string[];
+  itemClass: string | string[];
 }
 
 describe('ErrorsComponent', () => {
@@ -74,6 +81,40 @@ describe('ErrorsComponent', () => {
 
       it('shouldn\'t show errors', () => {
         expect(debugElement.queryAll(By.css('.afv-alert')).length).toBe(0);
+      });
+    });
+
+    describe('when component has custom input containerClass value', () => {
+      it('should render container with custom classes', () => {
+        testHostComponent.containerClass = 'custom-container-class';
+        testHostFixture.detectChanges();
+
+        expect(debugElement.queryAll(By.css('.custom-container-class')).length).toBe(1);
+      });
+
+      it('should render container with custom classes', () => {
+        testHostComponent.containerClass = ['custom-container-class', 'custom-container-class-2'];
+        testHostFixture.detectChanges();
+
+        expect(debugElement.queryAll(By.css('.custom-container-class')).length).toBe(1);
+        expect(debugElement.queryAll(By.css('.custom-container-class-2')).length).toBe(1);
+      });
+    });
+
+    describe('when component has custom input itemCLass value', () => {
+      it('should render container with custom classes', () => {
+        testHostComponent.itemClass = 'custom-item-class';
+        testHostFixture.detectChanges();
+
+        expect(debugElement.queryAll(By.css('.custom-item-class')).length).toBe(1);
+      });
+
+      it('should render container with custom classes', () => {
+        testHostComponent.itemClass = ['custom-item-class', 'custom-item-class-2'];
+        testHostFixture.detectChanges();
+
+        expect(debugElement.queryAll(By.css('.custom-item-class')).length).toBe(1);
+        expect(debugElement.queryAll(By.css('.custom-item-class-2')).length).toBe(1);
       });
     });
   });

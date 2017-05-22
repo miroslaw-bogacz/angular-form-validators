@@ -1,4 +1,4 @@
-# AngularFormValidators
+# AngularFormValidators (0.0.5)
 
 ## Usage:
 `npm install --save angular-form-validators`
@@ -49,7 +49,11 @@ in template
 
 `show?`: `boolean`
 
-`showByStatus?`: `touched | untouched | dirty | pristine`
+`showByStatus?`: `'touched' | 'untouched' | 'dirty' | 'pristine'`
+
+`containerClass?`: `string | string[]`
+
+`itemClass?`: `string | string[]`
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
